@@ -37,9 +37,9 @@ export default function Team() {
                                 alt={member.name}
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
                             />
-                            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/60 to-transparent p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                                 <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
-                                <p className="text-primary font-bold text-sm uppercase tracking-wider mb-2">{member.role}</p>
+                                <p className="text-primary font-bold text-sm uppercase text-white tracking-wider mb-2">{member.role}</p>
                                 <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                                     {member.spec}
                                 </p>

@@ -49,15 +49,6 @@ const projects = [
         tags: ["Vite", "DaisyUI", "Personal Brand"],
         link: "https://rc-agency-demo-nutritionist-portfol.vercel.app/v1"
     },
-    {
-        id: 6,
-        title: "StreamX Platform",
-        category: "Streaming Service",
-        image: "/portfolio/streaming.png",
-        description: "Interfaz cinemática inmersiva para consumo de contenido multimedia a gran escala.",
-        tags: ["Next.js", "Framer Motion", "Video Streaming"],
-        link: "https://rc-agency-demo-streaming-web.vercel.app/"
-    }
 ];
 
 export default function Portfolio() {
