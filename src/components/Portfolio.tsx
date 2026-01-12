@@ -3,32 +3,33 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
-// In a real scenario, these would potentially link to the other running projects if they were hosted.
-// For now, they can be visual showcases.
 const projects = [
     {
         id: 1,
+        title: "Admin Dashboard",
+        category: "Management Interface",
+        image: "/portfolio/admin_dashboard.png",
+        description: "Dashboard administrativo integral para gestión de usuarios, analíticas y control de plataforma.",
+        tags: ["Next.js", "Tailwind", "Charts", "Admin"],
+        link: "https://rc-agency-demo-admin-dashboard.vercel.app/"
+    },
+    {
+        id: 2,
         title: "EcoShop Function",
         category: "E-commerce Fullstack",
         image: "/portfolio/ecommerce.png",
         description: "Plataforma de comercio electrónico de alto rendimiento con dashboard de análisis en tiempo real.",
-        tags: ["React", "Typescript", "Tailwind", "Dashboard"]
-    },
-    {
-        id: 2,
-        title: "StreamX Platform",
-        category: "Streaming Service",
-        image: "/portfolio/streaming.png",
-        description: "Interfaz cinemática inmersiva para consumo de contenido multimedia a gran escala.",
-        tags: ["Next.js", "Framer Motion", "Video Streaming"]
+        tags: ["React", "Typescript", "Tailwind", "Dashboard"],
+        link: "https://rc-agency-demo-ecommerce-function.vercel.app/"
     },
     {
         id: 3,
-        title: "NutriLife Portfolio",
-        category: "Health & Wellness",
-        image: "/portfolio/nutritionist.png",
-        description: "Sitio web personal para nutricionistas con múltiples temas visuales y gestión de contenido.",
-        tags: ["Vite", "DaisyUI", "Personal Brand"]
+        title: "Bloom & Willow",
+        category: "Niche Retail",
+        image: "/portfolio/flower_shop.png",
+        description: "Experiencia de compra elegante y minimalista para boutique floral.",
+        tags: ["E-commerce", "Minimalist", "UX/UI"],
+        link: "https://rc-agency-demo-flower-shop.vercel.app/"
     },
     {
         id: 4,
@@ -36,16 +37,27 @@ const projects = [
         category: "Mobile App Marketing",
         image: "/portfolio/mobile_app.png",
         description: "Landing page de alta conversión para aplicaciones móviles con presentacion 3D.",
-        tags: ["Mobile", "Marketing", "3D Assets"]
+        tags: ["Mobile", "Marketing", "3D Assets"],
+        link: "https://rc-agency-demo-mobile-app-presentat.vercel.app/"
     },
     {
         id: 5,
-        title: "Bloom & Willow",
-        category: "Niche Retail",
-        image: "/portfolio/flower_shop.png",
-        description: "Experiencia de compra elegante y minimalista para boutique floral.",
-        tags: ["E-commerce", "Minimalist", "UX/UI"]
+        title: "NutriLife Portfolio",
+        category: "Health & Wellness",
+        image: "/portfolio/nutritionist.png",
+        description: "Sitio web personal para nutricionistas con múltiples temas visuales y gestión de contenido.",
+        tags: ["Vite", "DaisyUI", "Personal Brand"],
+        link: "https://rc-agency-demo-nutritionist-portfol.vercel.app/v1"
     },
+    {
+        id: 6,
+        title: "StreamX Platform",
+        category: "Streaming Service",
+        image: "/portfolio/streaming.png",
+        description: "Interfaz cinemática inmersiva para consumo de contenido multimedia a gran escala.",
+        tags: ["Next.js", "Framer Motion", "Video Streaming"],
+        link: "https://rc-agency-demo-streaming-web.vercel.app/"
+    }
 ];
 
 export default function Portfolio() {
@@ -69,13 +81,16 @@ export default function Portfolio() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, idx) => (
-                        <motion.div
+                        <motion.a
                             key={project.id}
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="group card bg-base-200/50 hover:bg-base-200 border border-base-content/5 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
+                            className="group card bg-base-200/50 hover:bg-base-200 border border-base-content/5 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer block"
                         >
                             <figure className="relative h-64 overflow-hidden">
                                 <img
@@ -97,7 +112,7 @@ export default function Portfolio() {
                                     ))}
                                 </div>
                             </div>
-                        </motion.div>
+                        </motion.a>
                     ))}
                 </div>
 
